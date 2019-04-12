@@ -1,0 +1,17 @@
+[Unit]
+Description=Theia Web IDE Service
+After=network-online.target
+
+[Service]
+Type=idle
+WorkingDirectory=/opt/theia-martha
+
+User=linaro
+Environment=NODE_VERSION=8
+ExecStart=/opt/theia-martha/start_martha_ide.sh
+Restart=always
+RestartSec=0
+
+[Install]
+WantedBy=multi-user.target
+
