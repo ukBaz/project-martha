@@ -8,7 +8,7 @@ WorkingDirectory=/opt/theia-martha
 
 User=linaro
 Environment=NODE_VERSION=8
-ExecStart=/home/linaro/.nvm/nvm-exec yarn theia start /my-workspace --hostname 0.0.0.0 --port 8080
+ExecStart=/opt/theia-martha/start_martha_ide.sh
 Restart=always
 RestartSec=0
 
