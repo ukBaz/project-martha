@@ -71,11 +71,17 @@ sudo cp mnt-point/usr/local/lib/libmraa.so* mnt-point/usr/lib/.
 # Device Tree scripts to enable SPI
 sudo cp -R ../dt-update-martha/dt-update mnt-point/opt/.
 
+# Unmount
 sudo umount mnt-point/dev/pts
 sudo umount mnt-point/dev
 sudo umount mnt-point/proc
 sudo umount mnt-point/sys
 sudo umount mnt-point
+
+# Resize image
+resize2fs -M linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
+
+# Converting from raw format to Android sparse format
 img2simg linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283_martha.img
 
 
