@@ -7,7 +7,7 @@ cd project_martha_macos
 
 echo ${PWD}
 
-unzip ../download_adb/platform-tools-latest-macos.zip
+unzip ../download_adb/platform-tools-latest-darwin.zip
 unzip ../linux-martha/dragonboard410c_bootloader_emmc_linux-88.zip -d db_image
 cp ../linux-martha/boot-linaro-stretch-qcom-snapdragon-arm64-20171016-283.img.gz db_image
 gunzip db_image/boot-linaro-stretch-qcom-snapdragon-arm64-20171016-283.img.gz
