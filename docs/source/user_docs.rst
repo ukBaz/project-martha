@@ -65,6 +65,7 @@ USB Ethernet/RNDIS Gadget to :code:`169.254.1.100` and the Gateway to :code:`169
 .. image:: ../assets/image4.png
     :width: 50%
     :align: center
+
 Open a browser on your PC and type in the URL http://169.254.1.1:8080
 
 On Linux
@@ -95,7 +96,7 @@ To get started creating code, select “New File” from the file pulldown menu 
 To run your new program make sure there is a terminal window open to type the command.
 If there is no terminal it can be opened from the “Terminal” pulldown menu
 
-.. image:: ../assets/image2.png
+.. image:: ../assets/image1.png
     :width: 50%
     :align: center
 
@@ -112,6 +113,3 @@ Try this piece of code to flash one of the Dragonboard LEDs
     led4.setBrightness(0xff)
     sleep(5)
     led4.setBrightness(0x00)
-
-
-
