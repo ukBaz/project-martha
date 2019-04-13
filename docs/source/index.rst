@@ -24,12 +24,16 @@ Dragonboard 410c and be presented with a development environment in the browser.
 A demo of the original proof-of-concept is available on `YouTube
 <https://youtu.be/_6NfOjCtnuk>`_
 
+.. toctree::
+   overview
+   user_docs
+   developer_docs
 
 
 Indices and tables
 ==================
 
-.. toctree::
-   overview
-   user_docs
-   developer_docs
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
