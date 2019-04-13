@@ -2,20 +2,34 @@
 :: Ensure Dragonboard is in "fastboot" mode. To put board in this mode:
 :: Power on with "Vol -" switch held
 
-fastboot flash partition db_image/gpt_both0.bin
-fastboot flash hyp db_image/hyp.mbn
-fastboot flash rpm db_image/rpm.mbn
-fastboot flash sbl1 db_image/sbl1.mbn
-fastboot flash tz db_image/tz.mbn
-fastboot flash aboot db_image/emmc_appsboot.mbn
-fastboot flash cdt db_image/sbc_1.0_8016.bin
+@ECHO OFF
+for /f %%i in ('platform-tools\fastboot devices') do set devices=%%i
+IF [%devices%] == [] GOTO MissingDevice
+echo Flashing: %devices%
 
-fastboot erase boot
-fastboot erase rootfs
+platform-tools\fastboot flash partition db_image/gpt_both0.bin
+platform-tools\fastboot flash hyp db_image/hyp.mbn
+platform-tools\fastboot flash rpm db_image/rpm.mbn
+platform-tools\fastboot flash sbl1 db_image/sbl1.mbn
+platform-tools\fastboot flash tz db_image/tz.mbn
+platform-tools\fastboot flash aboot db_image/emmc_appsboot.mbn
+platform-tools\fastboot flash cdt db_image/sbc_1.0_8016.bin
+platform-tools\fastboot erase boot
+platform-tools\fastboot erase rootfs
 fastboot erase devinfo
+platform-tools\fastboot reboot
 
-fastboot reboot
+ECHO Wait for reboot
 
-fastboot flash boot db_image/boot-linaro-stretch-qcom-snapdragon-arm64-20171016-283.img
-fastboot flash rootfs db_image/linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283_martha.img
+platform-tools\fastboot flash boot db_image/boot-linaro-stretch-qcom-snapdragon-arm64-20171016-283.img
+platform-tools\fastboot flash rootfs db_image/linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283_martha.img
 
+GOTO END
+
+:MissingDevice
+echo No Device in "fastboot" connected.
+echo Power on Dragonboard while pressing "-" button.
+
+:END
+echo Exiting
+PAUSE
