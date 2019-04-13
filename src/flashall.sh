@@ -4,7 +4,7 @@
 # Ensure Dragonboard is in "fastboot" mode. To put board in this mode:
 # Power on with "Vol -" switch held
 
-DEVICE_ID=$(fastboot devices)
+DEVICE_ID=$(platform-tools/fastboot devices)
 
 function flashall {
     platform-tools/fastboot flash partition db_image/gpt_both0.bin
