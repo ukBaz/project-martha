@@ -118,10 +118,16 @@ Try this piece of code to flash one of the Dragonboard LEDs
 Internet Access
 ===============
 
+To connect to the WiFi access point the Text User Interface for controlling NetworkManager
+can be used. This can be started with:
+
 :code:`sudo nmtui`
 
 Downloads
 =========
+
+The latest builds are available here to be loaded on to the Dragonboard 410c. Choose the
+version based on the operating system of the host computer being used to load the image.
 
 Windows 10
 ----------
