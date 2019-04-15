@@ -1,7 +1,8 @@
 ========
 Overview
 ========
-This repository is for recipes require to build the custom Linux for Dragonboard 410c.
-This custom Linux will target use of the board in scenario where it will be connected to a
-host laptop. It will make a Cloud IDE available via the ethernet gadget.
+
+This repository contains the scripts and configuration required to build a customized Linux image for Dragonboard 410c.
+The custom build allows a Cloud IDE (Theia) running on the Dragonboard to be accessed remotely by a laptop user
+over a micro-USB cable.
 
