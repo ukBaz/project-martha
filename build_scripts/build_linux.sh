@@ -15,9 +15,7 @@ gunzip linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.gz
 simg2img linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
 
 # resize disk
-truncate -s 3G linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
-e2fsck -f linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
-resize2fs linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
+resize2fs linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw 3G
 
 # mount 
 mkdir mnt-point
@@ -79,6 +77,7 @@ sudo umount mnt-point/sys
 sudo umount mnt-point
 
 # Resize image
+e2fsck -f linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
 resize2fs -M linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
 
 # Converting from raw format to Android sparse format
