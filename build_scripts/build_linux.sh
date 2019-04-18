@@ -81,6 +81,6 @@ e2fsck -f linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
 resize2fs -M linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
 
 # Converting from raw format to Android sparse format
-img2simg linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283_martha.img
+ext2simg linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283_martha.img
 
 
