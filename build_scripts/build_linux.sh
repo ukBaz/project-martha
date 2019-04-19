@@ -63,8 +63,8 @@ cp ../src/build_db_martha.sh mnt-point/opt/theia-martha/build_db_martha.sh
 sudo chroot --userspec linaro:linaro mnt-point /opt/theia-martha/build_db_martha.sh
 
 # Setup mraa
-sudo tar -zxf ../mraa-martha/mraa_with_python.tar.Z -C mnt-point
-sudo cp mnt-point/usr/local/lib/libmraa.so* mnt-point/usr/lib/.
+cp ../src/install_mraa_python.sh mnt-point/home/linaro/install_mraa_python.sh
+sudo chroot --userspec linaro:linaro mnt-point /home/linaro/install_mraa_python.sh
 
 # Device Tree scripts to enable SPI
 sudo cp -R ../dt-update-martha/dt-update mnt-point/opt/.
