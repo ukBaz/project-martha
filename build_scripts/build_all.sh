@@ -4,5 +4,5 @@ build_scripts/build_dt_update.sh
 build_scripts/build_linux.sh
 build_scripts/build_martha_package_linux.sh
 build_scripts/build_martha_package_macos.sh
-build_scripts/uild_martha_package_windows.sh
+build_scripts/build_martha_package_windows.sh
 

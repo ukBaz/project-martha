@@ -14,3 +14,6 @@ cmake -DBUILDSWIG=ON \
       ..
 make
 sudo make install
+
+cd /
+
