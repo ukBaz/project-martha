@@ -38,7 +38,17 @@ sudo chroot mnt-point apt -y install build-essential autoconf libtool cmake pkg-
 sudo chroot mnt-point apt -y install python3-pip
 sudo chroot mnt-point pip3 install --upgrade pip
 sudo chroot mnt-point pip3 install bluezero
+sudo chroot mnt-point pip3 install micromez
 sudo chroot mnt-point pip3 install python-language-server
+
+# Network for USB interfae
+sudo cp ../src/modules mnt-point/etc/modules
+sudo cp ../src/interface.txt mnt-point/etc/network/interfaces
+
+# Setup mraa
+cp ../src/install_mraa_python.sh mnt-point/home/linaro/install_mraa_python.sh
+sudo chroot --userspec linaro:linaro mnt-point /home/linaro/install_mraa_python.sh
+
 
 # Install nvm and yarn
 cp ../src/install_nvm.sh mnt-point/home/linaro/install_nvm.sh
@@ -47,10 +57,6 @@ sudo chroot --userspec linaro:linaro mnt-point /home/linaro/install_nvm.sh
 # make workspace directory for theia-ide
 sudo chroot mnt-point mkdir /my-workspace
 sudo chroot mnt-point chmod 777 /my-workspace
-
-# Network for USB interfae
-sudo cp ../src/modules mnt-point/etc/modules
-sudo cp ../src/interface.txt mnt-point/etc/network/interfaces
 
 # Setup Theia IDE service
 sudo cp ../src/theia-ide.service mnt-point/etc/systemd/system/.
@@ -61,10 +67,6 @@ cp ../src/start_martha_ide.sh mnt-point/opt/theia-martha/start_martha_ide.sh
 cp ../src/theia_package.json mnt-point/opt/theia-martha/package.json
 cp ../src/build_db_martha.sh mnt-point/opt/theia-martha/build_db_martha.sh
 sudo chroot --userspec linaro:linaro mnt-point /opt/theia-martha/build_db_martha.sh
-
-# Setup mraa
-cp ../src/install_mraa_python.sh mnt-point/home/linaro/install_mraa_python.sh
-sudo chroot --userspec linaro:linaro mnt-point /home/linaro/install_mraa_python.sh
 
 # Device Tree scripts to enable SPI
 sudo cp -R ../dt-update-martha/dt-update mnt-point/opt/.
