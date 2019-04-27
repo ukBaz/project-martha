@@ -35,6 +35,7 @@ sudo chroot mnt-point apt -y update
 sudo chroot mnt-point apt -y install locales
 sudo chroot mnt-point apt -y upgrade
 sudo chroot mnt-point apt -y install build-essential autoconf libtool cmake pkg-config git python3-dev swig3.0 libpcre3-dev nodejs-dev
+sudo chroot mnt-point apt -y install links2 lynx
 sudo chroot mnt-point apt -y install python3-pip
 sudo chroot mnt-point pip3 install --upgrade pip
 sudo chroot mnt-point pip3 install bluezero
