@@ -14,13 +14,17 @@ Welcome to Project Martha's documentation
 Objective
 ---------
 
-The goal of this project is to enable people to get started on developing ideas quickly on the `Dragonboard 410c
-<https://www.96boards.org/product/dragonboard410c/>`_ Single Board Computer. This project has primarily been
-driven by the need to get up and running quickly at STEM outreach events or hackathons where there is
-little infrastructure. This means the project prioritizes ease of setup for expected activities.
+The goal of this project is to enable people to get started on developing ideas
+quickly on the `Dragonboard 410c
+<https://www.96boards.org/product/dragonboard410c/>`_ Single Board Computer.
+This project has primarily been driven by the need to get up and running
+quickly at STEM outreach events or hackathons where there is little
+infrastructure. This means the project prioritizes ease of setup for expected
+activities.
 
-Project Martha aims to provide a Linux image that will allow a host computer (laptop) to connect via USB to the
-Dragonboard 410c and be presented with a development environment in the browser.
+Project Martha aims to provide a Linux image that will allow a host computer
+(laptop) to connect via USB to the Dragonboard 410c and be presented with a
+development environment in the browser.
 A demo of the original proof-of-concept is available on `YouTube
 <https://youtu.be/_6NfOjCtnuk>`_
 
