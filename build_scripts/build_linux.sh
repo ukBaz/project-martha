@@ -11,16 +11,16 @@ sudo apt install android-tools-fsutils
 sudo apt install qemu-user-static
 
 # Converting from Android sparse format to raw format
-gunzip linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.gz 
-simg2img linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
+gunzip -c linaro-buster-developer-dragonboard-410c-528.img.gz > linaro-buster-developer-dragonboard-410c-528.img
+simg2img linaro-*.img martha-linaro-developer-dragonboard-410c.img.raw
 
 # resize disk
-resize2fs linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw 3G
+e2fsck -f martha-linaro-developer-dragonboard-410c.img.raw
+resize2fs martha-linaro-developer-dragonboard-410c.img.raw 3G
 
 # mount 
 mkdir mnt-point
-sudo mount -t ext4 -o loop linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw mnt-point
-# sudo mount --bind /dev mnt-point/dev
+sudo mount -t ext4 -o loop martha-linaro-developer-dragonboard-410c.img.raw mnt-point
 sudo mount -t proc -o nosuid,noexec,nodev proc mnt-point/proc
 sudo mount -t sysfs -o nosuid,noexec,nodev sysfs mnt-point/sys
 sudo mount -t devtmpfs -o mode=0755,nosuid devtmpfs mnt-point/dev
@@ -34,7 +34,7 @@ sudo cp /usr/bin/qemu-aarch64-static mnt-point/usr/bin
 sudo chroot mnt-point apt -y update
 sudo chroot mnt-point apt -y install locales
 sudo chroot mnt-point apt -y upgrade
-sudo chroot mnt-point apt -y install build-essential autoconf libtool cmake pkg-config git python3-dev swig3.0 libpcre3-dev nodejs-dev
+sudo chroot mnt-point apt -y install build-essential autoconf libtool cmake pkg-config git python3-dev swig3.0 libpcre3-dev libnode-dev
 sudo chroot mnt-point apt -y install links2 lynx
 sudo chroot mnt-point apt -y install python3-pip
 sudo chroot mnt-point pip3 install --upgrade pip
@@ -80,10 +80,10 @@ sudo umount mnt-point/sys
 sudo umount mnt-point
 
 # Resize image
-e2fsck -f linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
-resize2fs -M linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw
+e2fsck -f martha-linaro-developer-dragonboard-410c.img.raw
+resize2fs -M martha-linaro-developer-dragonboard-410c.img.raw
 
 # Converting from raw format to Android sparse format
-ext2simg linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.raw linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283_martha.img
+img2simg martha-linaro-developer-dragonboard-410c.img.raw martha-linaro-developer-dragonboard-410c.img
 
 

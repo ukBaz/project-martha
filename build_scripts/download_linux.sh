@@ -7,10 +7,10 @@ cd linux-martha
 
 # Get three files
 # boot installer
-wget https://releases.linaro.org/96boards/dragonboard410c/linaro/rescue/17.09/dragonboard410c_bootloader_emmc_linux-88.zip
+wget http://releases.linaro.org/96boards/dragonboard410c/linaro/rescue/19.01/dragonboard-410c-bootloader-emmc-linux-110.zip
 
 # boot image
-wget http://releases.linaro.org/96boards/dragonboard410c/linaro/debian/17.09/boot-linaro-stretch-qcom-snapdragon-arm64-20171016-283.img.gz
+wget http://releases.linaro.org/96boards/dragonboard410c/linaro/debian/19.01/boot-linaro-buster-dragonboard-410c-528.img.gz
 
 # rootfs image
-wget http://releases.linaro.org/96boards/dragonboard410c/linaro/debian/17.09/linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283.img.gz
+wget http://releases.linaro.org/96boards/dragonboard410c/linaro/debian/19.01/linaro-buster-developer-dragonboard-410c-528.img.gz
