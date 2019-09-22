@@ -33,6 +33,8 @@ sudo cp /usr/bin/qemu-aarch64-static mnt-point/usr/bin
 # update system
 sudo chroot mnt-point apt -y update
 sudo chroot mnt-point apt -y install locales
+sudo sed -i 's/^# en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' mnt-point/etc/locale.gen
+sudo chroot mnt-point locale-gen 
 sudo chroot mnt-point apt -y upgrade
 sudo chroot mnt-point apt -y install build-essential autoconf libtool cmake pkg-config git python3-dev swig3.0 libpcre3-dev libnode-dev
 sudo chroot mnt-point apt -y install links2 lynx
