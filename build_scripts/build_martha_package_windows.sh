@@ -8,7 +8,7 @@ cd project_martha_windows
 echo ${PWD}
 
 unzip ../download_adb/platform-tools-latest-windows.zip
-unzip ../linux-martha/dragonboard410c_bootloader_emmc_linux-*.zip -d db_image
+unzip ../linux-martha/dragonboard-410c-bootloader-emmc-linux-*.zip -d db_image
 cp ../linux-martha/boot-linaro-*.img.gz db_image
 gunzip db_image/boot-linaro-*.img.gz
 cp ../linux-martha/martha-linaro-developer-dragonboard-410c.img db_image
