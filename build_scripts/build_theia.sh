@@ -15,7 +15,7 @@ npm install -g yarn
 
 # Install dependencies
 sudo apt-get install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-sudo apt-get install build-essential autoconf libtool cmake pkg-config git python3-dev swig3.0 libpcre3-dev nodejs-dev
+sudo apt-get install build-essential autoconf libtool cmake pkg-config git python3-dev swig3.0 libpcre3-dev libnode-dev
 pip3 install python-language-server
 pip3 install jedi
 

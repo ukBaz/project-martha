@@ -21,8 +21,8 @@ platform-tools\fastboot reboot
 
 ECHO Wait for reboot
 
-platform-tools\fastboot flash boot db_image\boot-linaro-stretch-qcom-snapdragon-arm64-20171016-283.img
-platform-tools\fastboot flash rootfs db_image\linaro-stretch-developer-qcom-snapdragon-arm64-20171016-283_martha.img
+platform-tools\fastboot flash boot db_image\boot-linaro-buster-dragonboard-410c-528.img
+platform-tools\fastboot flash rootfs db_image\martha-linaro-developer-dragonboard-410c.img
 platform-tools\fastboot reboot
 
 GOTO END
